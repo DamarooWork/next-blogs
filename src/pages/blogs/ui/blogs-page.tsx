@@ -1,14 +1,14 @@
 'use client'
-import { Post } from '@/app/generated/prisma'
 import { Container } from '@/shared/components'
 import { cn } from '@/shared/lib/utils'
-import { Button, ModeToggle } from '@/shared/ui'
+import { Button } from '@/shared/ui'
 import { useQuery } from '@tanstack/react-query'
+import { Blog } from 'prisma/generated'
 interface Props {
   className?: string
 }
 export function BlogsPage({ className }: Props) {
-  const { isPending, error, data } = useQuery<Post[]>({
+  const { isPending, error, data } = useQuery<Blog[]>({
     queryKey: ['blogsData'],
     queryFn: () => fetch('/api/blogs').then((res) => res.json()),
   })
@@ -18,9 +18,7 @@ export function BlogsPage({ className }: Props) {
   return (
     <Container className={cn(className, 'flex flex-col gap-2')}>
       <h1 className="text-red-500 dark:text-yellow-400">Blogs</h1>
-      <section>
-        <ModeToggle />
-      </section>
+ 
       <ul>
         {data?.map((blog) => (
           <li key={blog.id}>

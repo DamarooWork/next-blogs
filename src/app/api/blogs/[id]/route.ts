@@ -5,7 +5,7 @@ export async function GET({ params }: { params: { id: string } }) {
   try {
     const paramsData = await params
     const id = Number(paramsData.id)
-    const blog = await prisma.post.findUnique({
+    const blog = await prisma.blog.findUnique({
       where: {
         id,
       },

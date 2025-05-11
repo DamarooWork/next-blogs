@@ -6,7 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "@/app/generated/prisma"
+  output   = "./generated/prisma"
 }
 
 datasource db {
@@ -17,10 +17,10 @@ model User {
   id    Int     @id @default(autoincrement())
   email String  @unique
   name  String?
-  posts Post[]
+  blogs Blog[]
 }
 
-model Post {
+model Blog {
   id        Int     @id @default(autoincrement())
   title     String
   content   String?

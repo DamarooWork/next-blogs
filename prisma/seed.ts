@@ -1,4 +1,4 @@
-import { Prisma, PrismaClient } from '@/app/generated/prisma'
+import { Prisma, PrismaClient } from './generated/prisma'
 import { withAccelerate } from '@prisma/extension-accelerate'
 
 const prisma = new PrismaClient().$extends(withAccelerate())
@@ -6,8 +6,8 @@ const prisma = new PrismaClient().$extends(withAccelerate())
 const userData: Prisma.UserCreateInput[] = [
   {
     name: 'Alice',
-    email: 'alice@prisma.io',
-    posts: {
+    email: 'alice1@prisma.io',
+    blogs: {
       create: [
         {
           title: 'Join the Prisma Discord',
@@ -23,8 +23,8 @@ const userData: Prisma.UserCreateInput[] = [
   },
   {
     name: 'Bob',
-    email: 'bob@prisma.io',
-    posts: {
+    email: 'bob1@prisma.io',
+    blogs: {
       create: [
         {
           title: 'Follow Prisma on Twitter',

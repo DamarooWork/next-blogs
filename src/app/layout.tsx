@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import './globals.css'
 import { Providers } from '@/shared/components'
+import { BlogsHeader } from '@/widgets/header'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,9 +25,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} bg-background text-foreground  min-h-screen`}
+        className={`${geistSans.variable} bg-background text-foreground  min-h-[150vh]`}
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <BlogsHeader />
+          {children}
+        </Providers>
       </body>
     </html>
   )
