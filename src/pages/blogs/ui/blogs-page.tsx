@@ -9,7 +9,7 @@ interface Props {
   className?: string
 }
 
-export function BlogsPage({ className }: Props) {
+export default function BlogsPage({ className }: Props) {
   const t = useTranslations('home')
   const { isPending, error, data } = useQuery<Blog[]>({
     queryKey: ['blogsData'],

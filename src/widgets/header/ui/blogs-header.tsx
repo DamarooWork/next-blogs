@@ -4,11 +4,13 @@ import { Button, ModeToggle } from '@/shared/ui'
 import BurgerMenu from './burger-menu'
 import LanguageSelector from './language-selector'
 import { Link } from '@/i18n/navigation'
+import { useTranslations } from 'next-intl'
 
 interface Props {
   className?: string
 }
 export function BlogsHeader({ className }: Props) {
+  const t = useTranslations('header')
   return (
     <header
       className={cn(
@@ -17,11 +19,13 @@ export function BlogsHeader({ className }: Props) {
       )}
     >
       <Container className="flex justify-between items-center">
-        <Link href={'/'} className="text-4xl italic">
+        <Link href={'/'} className="text-4xl italic font-bold">
           BLOGS
         </Link>
         <section className="flex gap-2">
-          <Button variant="outline" className='text-md' >Новый блог</Button>
+          <Button variant="outline" className="text-md">
+            {t('btn_new_blog')}
+          </Button>
           <LanguageSelector />
           <ModeToggle />
           <BurgerMenu />

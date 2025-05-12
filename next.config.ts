@@ -1,5 +1,5 @@
-import type { NextConfig } from "next";
-import createNextIntlPlugin from 'next-intl/plugin';
+import type { NextConfig } from 'next'
+import createNextIntlPlugin from 'next-intl/plugin'
 const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-};
-const withNextIntl = createNextIntlPlugin();
+}
+const withNextIntl = createNextIntlPlugin()
 
-export default withNextIntl(nextConfig);
+export default withNextIntl(nextConfig)
