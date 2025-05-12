@@ -3,11 +3,14 @@ import { Container } from '@/shared/components'
 import { cn } from '@/shared/lib/utils'
 import { Button } from '@/shared/ui'
 import { useQuery } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
 import { Blog } from 'prisma/generated'
 interface Props {
   className?: string
 }
+
 export function BlogsPage({ className }: Props) {
+  const t = useTranslations('home')
   const { isPending, error, data } = useQuery<Blog[]>({
     queryKey: ['blogsData'],
     queryFn: () => fetch('/api/blogs').then((res) => res.json()),
@@ -16,9 +19,9 @@ export function BlogsPage({ className }: Props) {
     return <span>Loading...</span>
   }
   return (
-    <Container className={cn(className, 'flex flex-col gap-2')}>
-      <h1 className="text-red-500 dark:text-yellow-400">Blogs</h1>
- 
+    <Container className={cn(className, 'flex flex-col gap-2 my-4 lg:mt-10')}>
+      <h1 className="text-red-500 dark:text-yellow-400">{t('blogs')}</h1>
+
       <ul>
         {data?.map((blog) => (
           <li key={blog.id}>

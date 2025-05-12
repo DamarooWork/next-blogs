@@ -1,9 +1,9 @@
 import { Container } from '@/shared/components'
 import { cn } from '@/shared/lib/utils'
-import { ModeToggle } from '@/shared/ui'
-import Link from 'next/link'
+import { Button, ModeToggle } from '@/shared/ui'
 import BurgerMenu from './burger-menu'
 import LanguageSelector from './language-selector'
+import { Link } from '@/i18n/navigation'
 
 interface Props {
   className?: string
@@ -21,6 +21,7 @@ export function BlogsHeader({ className }: Props) {
           BLOGS
         </Link>
         <section className="flex gap-2">
+          <Button variant="outline" className='text-md' >Новый блог</Button>
           <LanguageSelector />
           <ModeToggle />
           <BurgerMenu />

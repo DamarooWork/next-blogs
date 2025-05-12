@@ -8,11 +8,9 @@ import {
   DropdownMenuTrigger,
 } from '@/shared/ui'
 import { Menu } from 'lucide-react'
-import Link from 'next/link'
-interface Props {
-  className?: string
-}
-export default function BurgerMenu({ className }: Props) {
+import { Link } from '@/i18n/navigation'
+
+export default function BurgerMenu() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

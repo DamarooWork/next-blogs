@@ -1,5 +1,6 @@
 'use client'
-import { signOut } from 'next-auth/react'
+import { Link, usePathname } from '@/i18n/navigation'
+import { LOCALES_NAMES } from '@/shared/lib/contants'
 import {
   Button,
   DropdownMenu,
@@ -7,12 +8,10 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/shared/ui'
-import { Earth, Globe } from 'lucide-react'
-import Link from 'next/link'
-interface Props {
-  className?: string
-}
-export default function LanguageSelector({ className }: Props) {
+import { Globe } from 'lucide-react'
+
+export default function LanguageSelector() {
+  const pathname = usePathname()
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -22,8 +21,11 @@ export default function LanguageSelector({ className }: Props) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="flex-col flex" align="end">
-        <DropdownMenuItem>Русский</DropdownMenuItem>
-        <DropdownMenuItem>English</DropdownMenuItem>
+        {LOCALES_NAMES.map((name, index) => (
+          <Link key={index} href={pathname} locale={name?.locale}>
+            <DropdownMenuItem>{name?.name}</DropdownMenuItem>
+          </Link>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   )
