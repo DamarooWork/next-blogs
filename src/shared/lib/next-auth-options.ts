@@ -1,4 +1,4 @@
-import CredentialsProvider from 'next-auth/providers/credentials'
+// import CredentialsProvider from 'next-auth/providers/credentials'
 import { AuthOptions } from 'next-auth'
 export const authOptions: AuthOptions = {
   providers: [

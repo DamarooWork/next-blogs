@@ -18,6 +18,9 @@ export default function BlogsPage({ className }: Props) {
   if (isPending) {
     return <span>Loading...</span>
   }
+  if (error){
+    return <span>Error</span>
+  }
   return (
     <Container className={cn(className, 'flex flex-col gap-2 my-4 lg:mt-10')}>
       <h1 className="text-red-500 dark:text-yellow-400">{t('blogs')}</h1>
