@@ -1,3 +1,4 @@
+
 'use client'
 import { Container } from '@/shared/components'
 import { cn } from '@/shared/lib/utils'
@@ -9,7 +10,7 @@ interface Props {
   className?: string
 }
 
-export default function BlogsPage({ className }: Props) {
+export function BlogsPage({ className }: Props) {
   const t = useTranslations('home')
   const { isPending, error, data } = useQuery<Blog[]>({
     queryKey: ['blogsData'],

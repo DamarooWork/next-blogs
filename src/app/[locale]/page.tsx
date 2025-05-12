@@ -1,4 +1,4 @@
-import BlogsPage from "@/pages/blogs/ui/blogs-page";
+import { BlogsPage } from '@/views/blogs'
 
 export default async function HomePage() {
   return <BlogsPage />
