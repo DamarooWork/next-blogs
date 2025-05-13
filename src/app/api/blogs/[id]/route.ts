@@ -11,11 +11,8 @@ export async function GET({ params }: { params: { id: string } }) {
       },
     })
     return NextResponse.json(blog)
-  
   } catch (error) {
     console.log('[BLOG_GET] Server error', error)
     return NextResponse.json({ error: 'Blog not found' }, { status: 404 })
   }
 }
-
-
