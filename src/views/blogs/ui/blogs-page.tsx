@@ -18,8 +18,8 @@ export function BlogsPage({ className }: Props) {
   })
 
   return (
-    <Container className={cn(className, 'flex flex-col gap-2 my-4 lg:mt-10')}>
-      <h1 className="text-red-500 dark:text-yellow-400">{t('blogs')}</h1>
+    <Container className={cn(className, 'flex flex-col gap-2')}>
+      <h1 className="text-4xl">{t('blogs')}</h1>
       {isPending && <span>Loading...</span>}
       {error && <span>Error</span>}
       {data?.length && (

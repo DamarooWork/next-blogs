@@ -15,7 +15,7 @@ export function BlogsHeader({ className }: Props) {
     <header
       className={cn(
         className,
-        'sticky top-0 left-0 w-full  my-auto border-b-2 shadow-md shadow-foreground/10 backdrop-blur-sm bg-background/80 dark:bg-background/80 dark:border-b-foreground/20'
+        'sticky top-0 left-0 w-full  my-auto border-b-2 shadow-md shadow-foreground/10 backdrop-blur-sm bg-background/80 dark:bg-background/80 dark:border-b-foreground/20 z-50'
       )}
     >
       <Container className="flex justify-between items-center">
