@@ -5,6 +5,7 @@ import BurgerMenu from './burger-menu'
 import LanguageSelector from './language-selector'
 import { Link } from '@/i18n/navigation'
 import { useTranslations } from 'next-intl'
+import { Music4 } from 'lucide-react'
 
 interface Props {
   className?: string
@@ -19,8 +20,14 @@ export function BlogsHeader({ className }: Props) {
       )}
     >
       <Container className="flex justify-between items-center">
-        <Link href={'/'} className="text-4xl italic font-bold">
-          BLOGS
+        <Link
+          href={'/'}
+          className="flex items-center justify-center gap-2 font-bold italic text-foreground"
+        >
+          <Music4 className="size-9" />
+          <span className="uppercase line-clamp-1 text-2xl font-serif">
+            Music news
+          </span>
         </Link>
         <section className="flex gap-2">
           <Button variant="outline" className="text-md">
