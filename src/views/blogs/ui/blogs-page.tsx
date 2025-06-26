@@ -13,8 +13,11 @@ interface Props {
 export function BlogsPage({ className }: Props) {
   const t = useTranslations('home')
   const { isPending, error, data } = useQuery<Blog[]>({
+
     queryKey: ['blogsData'],
+
     queryFn: () => fetch('/api/blogs').then((res) => res.json()),
+
   })
 
   return (
@@ -27,9 +30,8 @@ export function BlogsPage({ className }: Props) {
           {data?.map((blog) => (
             <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
-              <h2>
-                {blog.title} - {blog.content}
-              </h2>
+              <h2>{blog.title}</h2>
+              <p>{blog.content.map((content) => content.text).join(' ')}</p>
             </Link>
             </li>
           ))}

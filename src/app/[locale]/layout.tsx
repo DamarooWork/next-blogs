@@ -17,10 +17,10 @@ const geistSans = Geist({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Blogs by Damaroo',
-    default: 'Blogs by Damaroo',
+    template: '%s | Music news by Damaroo',
+    default: 'Music news by Damaroo',
   },
-  description: 'Blogs by Damaroo with Next.js',
+  description: 'Music news by Damaroo',
 }
 
 export default async function RootLayout({

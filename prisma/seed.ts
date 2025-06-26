@@ -13,14 +13,18 @@ const userData: Prisma.UserCreateInput[] = [
       create: [
         {
           title: 'News 1',
-          content: ['Новые новости', 'Новые новости', 'Новые новости'],
+          content: {
+            create: [{ text: 'Новые новости' }, { text: 'Новые новости' }],
+          },
           previewImage:
             'https://i.pinimg.com/736x/cb/6e/0e/cb6e0e9234d879cb482e96fde1ec4c29.jpg',
           published: true,
         },
         {
           title: 'News 2',
-          content: ['Новые новости', 'Новые новости', 'Новые новости'],
+          content: {
+            create: [{ text: 'Новые новости' }, { text: 'Новые новости' }],
+          },
           previewImage:
             'https://i.pinimg.com/736x/cb/6e/0e/cb6e0e9234d879cb482e96fde1ec4c29.jpg',
 
@@ -37,14 +41,18 @@ const userData: Prisma.UserCreateInput[] = [
       create: [
         {
           title: 'News 3',
-          content: ['Новые новости', 'Новые новости', 'Новые новости'],
+          content: {
+            create: [{ text: 'Новые новости' }, { text: 'Новые новости' }],
+          },
           previewImage:
             'https://i.pinimg.com/736x/cb/6e/0e/cb6e0e9234d879cb482e96fde1ec4c29.jpg',
           published: true,
         },
         {
           title: 'News 4',
-          content: ['Новые новости', 'Новые новости', 'Новые новости'],
+          content: {
+            create: [{ text: 'Новые новости' }, { text: 'Новые новости' }],
+          },
           previewImage:
             'https://i.pinimg.com/736x/cb/6e/0e/cb6e0e9234d879cb482e96fde1ec4c29.jpg',
           published: true,
